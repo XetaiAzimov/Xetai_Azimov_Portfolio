@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xətai Əzimov|Portfolio</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #0f0f1a;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      header {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      header video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.8),
+          rgba(20, 20, 40, 0.9)
+        );
+        z-index: -1;
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        background: linear-gradient(90deg, #7f5af0, #2cb67d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-content p {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
+
+      .btn {
+        margin-top: 30px;
+        padding: 12px 30px;
+        border: none;
+        background: linear-gradient(90deg, #7f5af0, #2cb67d);
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+      }
+
+      section {
+        padding: 100px 10%;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .about {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .about img {
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 40px rgba(127, 90, 240, 0.5);
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .projects a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #141426;
+        transition: 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: 0.6s;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        opacity: 0;
+        transition: 0.5s;
+      }
+
+      .card:hover img {
+        transform: scale(1.1);
+      }
+
+      .card:hover::after {
+        opacity: 1;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(127, 90, 240, 0.4);
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        background: #111;
+        font-size: 0.9rem;
+        opacity: 0.7;
+      }
+
+      /* Fade animation */
+      .fade {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .fade.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .about {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <video autoplay muted loop>
+        <source
+          src="https://www.w3schools.com/howto/rain.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Xətai Əzimov</h1>
+        <p>Frontend Developer | UI/UX Enthusiast</p>
+        <button class="btn" onclick="scrollToSection('projects')">
+          Layihələrə Bax
+        </button>
+      </div>
+    </header>
+
+    <section id="about" class="fade">
+      <h2 class="section-title">Haqqımda</h2>
+
+      <div class="about">
+        <img src="img/xetai2.jpeg" alt="Xətai Əzimov" />
+        <div class="about-text">
+          <p>
+            Salam! Mən <strong>Xətai Əzimov</strong>, Frontend və Backend
+            inkişaf üzrə developerəm. Veb interfeyslər və tətbiqlər
+            hazırlayarkən performans, estetik görünüş və istifadəçi təcrübəsi
+            mənim üçün önəmlidir.
+          </p>
+          <p>
+            Bildiyim texnologiyalar və dillər:
+            <strong
+              >HTML, CSS, Tailwind, Bootstrap, JavaScript, React, PHP, Laravel,
+              MySQL</strong
+            >.
+          </p>
+          <p>
+            Layihələrimdə həm vizual, həm də funksional mükəmməllik yaratmaq,
+            modern və premium dizaynlar təqdim etmək məqsədimdir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="fade">
+      <h2 class="section-title">Layihələrim</h2>
+
+      <div class="projects">
+        <a href="https://beauty-haven.vercel.app/" target="_blank" class="card">
+          <img src="img/Ekran görüntüsü (71).png" alt="Beauty Haven" />
+          <div class="card-content">
+            <h3>Beauty Haven</h3>
+            <p>
+              Zərif animasiyalar və premium interfeys detalları ilə hazırlanmış
+              müasir gözəllik salonu platforması.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://beauty-salon-gray.vercel.app/"
+          target="_blank"
+          class="card"
+        >
+          <img
+            src="img/Ekran görüntüsü (68)(1)(1).png"
+            alt="Beauty Salon Gray"
+          />
+          <div class="card-content">
+            <h3>Beauty Salon Gray</h3>
+            <p>
+              Minimalist dizayn və balanslı rəng palitrası ilə estetik salon
+              təqdimatı.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://aroma-kofe.vercel.app/" target="_blank" class="card">
+          <img src="img/Ekran görüntüsü (69)(1)(1).png" alt="Aroma Kofe" />
+          <div class="card-content">
+            <h3>Aroma Kofe</h3>
+            <p>
+              İsti tonlar və rahat istifadəçi təcrübəsi ilə qurulmuş cəlbedici
+              kafe konsepti.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://pisxoluq.vercel.app/" target="_blank" class="card">
+          <img src="img/0a39df.jpg" alt="Psixologiya" />
+          <div class="card-content">
+            <h3>Psixologiya</h3>
+            <p>
+              Sakit və güvən verən dizayn üzərində qurulmuş professional
+              psixoloji xidmət platforması.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://linguix-one.vercel.app/" target="_blank" class="card">
+          <img src="img/Boyuk-Britaniya-1-Bayraq.jpg" alt="Linguix" />
+          <div class="card-content">
+            <h3>Linguix</h3>
+            <p>
+              Dinamik struktur və interaktiv bölmələrlə hazırlanmış müasir dil
+              öyrənmə platforması.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://bright-mind-hazel.vercel.app/"
+          target="_blank"
+          class="card"
+        >
+          <img
+            src="img/elm-ve-tehsil-haqqinda-aforizmler-elm-haqqinda.webp"
+            alt="Bright Mind"
+          />
+          <div class="card-content">
+            <h3>Bright Mind</h3>
+            <p>
+              Təhsil və inkişaf yönümlü, enerjili və müasir interfeys dizaynına
+              sahib platforma.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://satis-sayiti.vercel.app/" target="_blank" class="card">
+          <img src="img/shutterstock_2019184193.jpg" alt="Satış Saytı" />
+          <div class="card-content">
+            <h3>Satış Saytı</h3>
+            <p>
+              Performans və istifadə rahatlığı ön planda saxlanılaraq
+              hazırlanmış e-commerce interfeysi.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://confer-nine.vercel.app/" target="_blank" class="card">
+          <img src="img/Ekran görüntüsü (72).png" alt="Confer" />
+          <div class="card-content">
+            <h3>Confer</h3>
+            <p>
+              Event və konfranslar üçün diqqət çəkən, enerjili və dinamik promo
+              sayt.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://fitnes-gold.vercel.app/" target="_blank" class="card">
+          <img src="img/fitnes2.jpg" alt="Fitnes Gold" />
+          <div class="card-content">
+            <h3>Fitnes Gold</h3>
+            <p>
+              Güc və dinamikanı əks etdirən, motivasiyaedici fitness platforması
+              dizaynı.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://exam-peach-kappa-33.vercel.app/"
+          target="_blank"
+          class="card"
+        >
+          <img src="img/Ekran görüntüsü (73).png" alt="Exam Platform" />
+          <div class="card-content">
+            <h3>Exam Platform</h3>
+            <p>
+              Onlayn imtahan və test sistemi üçün strukturlaşdırılmış və
+              intuitiv interfeys.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://olkeler-livid.vercel.app/"
+          target="_blank"
+          class="card"
+        >
+          <img src="img/albania-costa.jpg" alt="Ölkələr" />
+          <div class="card-content">
+            <h3>Ölkələr</h3>
+            <p>
+              Ölkələr haqqında məlumatları vizual və interaktiv şəkildə təqdim
+              edən platforma.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://darx-seven.vercel.app/" target="_blank" class="card">
+          <img src="img/Ekran görüntüsü (74).png" alt="Darx" />
+          <div class="card-content">
+            <h3>Darx</h3>
+            <p>
+              Kreativ animasiyalar və modern struktur ilə hazırlanmış landing
+              page dizaynı.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://logo360.vercel.app/" target="_blank" class="card">
+          <img src="img/17741.jpg" alt="Logo360" />
+          <div class="card-content">
+            <h3>Logo360</h3>
+            <p>
+              Brend və logo təqdimatı üçün minimalist və premium vizual həll.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://medical-1ija.vercel.app/" target="_blank" class="card">
+          <img src="img/Ekran görüntüsü (70).png" alt="Medical" />
+          <div class="card-content">
+            <h3>Medical</h3>
+            <p>
+              Təhlükəsizlik və peşəkarlıq hissi yaradan, təmiz və balanslı tibbi
+              xidmət interfeysi.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+  © 2026 Xətai Əzimov | All Rights Reserved
+
+  <div style="margin-top:15px; display:flex; gap:20px; justify-content:center; align-items:center;">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/0707414401" target="_blank" style="color:white; text-decoration:none; font-size:1.5rem;">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" style="width:24px; height:24px; vertical-align:middle;">
+      Vacab
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/azimoff_211?igsh=MTl5NmdzbTVkeDZrNA%3D%3D&utm_source=qr" target="_blank" style="color:white; text-decoration:none; font-size:1.5rem;">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" style="width:24px; height:24px; vertical-align:middle;">
+      Instagram
+    </a>
+  </div>
+</footer>
+
+    <script>
+      // Scroll funksiyası indi parametr qəbul edir
+      function scrollToSection(sectionId) {
+        document
+          .getElementById(sectionId)
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Fade animasiyası
+      const fades = document.querySelectorAll(".fade");
+
+      window.addEventListener("scroll", () => {
+        fades.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            el.classList.add("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
